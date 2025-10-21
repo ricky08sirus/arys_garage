@@ -1,10 +1,11 @@
 const express = require("express");
+const cors = require("cors");
 const { Pool } = require("pg");
 require("dotenv").config();
 
 const app = express();
 const port = 3000;
-
+app.use(cors());
 // PostgreSQL pool setup (Neon)
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
